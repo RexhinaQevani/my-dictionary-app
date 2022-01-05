@@ -1,12 +1,17 @@
 import React, { useState } from "react";
+import axios from "axios";
 import "./SearchEngine.css";
 
 export default function SearchEngine() {
   const [keyword, setKeyword] = useState("");
 
+  function handleResponse(response) {}
+
   function search(event) {
     event.preventDefault();
-    alert(`Searching for the word ${keyword}`);
+
+    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${keyword}`;
+    axios.get(apiUrl).then(handleResponse);
   }
 
   function handleKeywordChange(event) {
@@ -25,7 +30,7 @@ export default function SearchEngine() {
         <input
           type="submit"
           value="Search"
-          className="btn btn-secondary mb-3 w-80"
+          className="btn btn-secondary mb-3"
         />
       </form>
     </div>
