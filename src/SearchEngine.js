@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Results from "./Results";
 import "./SearchEngine.css";
 
 export default function SearchEngine() {
   const [keyword, setKeyword] = useState("");
+  const [definitions, setDefinitions] = useState(null);
 
-  function handleResponse(response) {}
+  function handleResponse(response) {
+    setDefinitions(response.data[0]);
+  }
 
   function search(event) {
     event.preventDefault();
@@ -33,6 +37,7 @@ export default function SearchEngine() {
           className="btn btn-secondary mb-3"
         />
       </form>
+      <Results results={definitions} />
     </div>
   );
 }
