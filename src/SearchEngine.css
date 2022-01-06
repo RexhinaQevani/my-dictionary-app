@@ -1,3 +1,25 @@
-.SearchEngine {
-  color: blueviolet;
+.SearchEngine section {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 10px rgba(136, 107, 123, 0.301);
+  margin: 20px 0;
+}
+.SearchEngine input {
+  width: 100%;
+  padding: 6px 4px;
+  border: 1px solid #ddd;
+  color: #333;
+}
+.SearchEngine ::placeholder {
+  text-align: center;
+  color: rgb(195, 140, 202);
+}
+.SearchEngine .btn {
+  font-weight: bold;
+  transition: 150ms all ease-in-out;
+}
+.SearchEngine .btn:hover {
+  background: rgba(136, 107, 123);
+  color: #ddd;
 }
